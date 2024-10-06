@@ -1,0 +1,518 @@
+
+
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #fff;
+  }
+  
+  .logo a {
+    color: black;
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links li {
+    display: inline;
+  }
+  
+  .nav-links a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 15px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    background-color: #555;
+    border-radius: 4px;
+  }
+  
+  .nav-login {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-login a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 15px;
+    border: 2px solid blue;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-login a:hover {
+    background-color: #007bff;
+    color:#fff;
+  }
+
+  @media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack items on smaller screens */
+        align-items: flex-start; /* Align items to the left */
+    }
+
+    .nav-links {
+        flex-direction: column; /* Stack links vertically */
+        width: 100%; /* Full width */
+        padding: 10px 0; /* Padding around links */
+    }
+
+    .nav-links li {
+        margin: 5px 0; /* Space between links */
+    }
+
+    .image-container {
+        height: 300px; /* Adjust height for smaller screens */
+    }
+
+    .overlay-text {
+        font-size: 20px; /* Smaller font size for overlay text */
+    }
+
+    .join-button {
+        bottom: 10px; /* Adjust button position */
+    }
+}
+
+@media (max-width: 480px) {
+    .overlay-text {
+        font-size: 18px; /* Smaller font size for very small screens */
+    }
+
+    .join-button {
+        font-size: 14px; /* Smaller font size for the button */
+        padding: 8px 15px; /* Adjust button padding */
+    }
+}
+
+
+
+
+    /* home */
+
+  .image-container {
+    border: 2px solid black; /* Border around the container */
+    width: 100%;
+    height: 80vh; /* Set the height to 80% of the viewport height */
+    background-image: url('https://s3-alpha-sig.figma.com/img/9a0f/235b/083f8069df6b70482aa1c27088a8f0c5?Expires=1728864000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=U1M4e5sxyReAK1RY9mjaJ4fhjVTnDdY8pytKxRv23EuaAO6xQgTQ1PENFVJFDUuHuN9TnDtMRGZwQ9DZTCPP572BuiLX5GfLkjGnDVsEyn5X~sJPXWP4SfMkllIaHuu1NkXtJ~tJ2p17UXW7A4jtkDf-RrsNuC3QWYBY8z4b8YQpEUhjQuZGzlHYyQJlMhtq425L8Nru~w7PDnOIrXFNLglRKIqx46FREPKE1dzGb2C~IOodRdEHudyqD5varhvUt~Ll0bsknwyFtoMnjwRkj~P93AAvdHXceVFF4JUdzyM7-IoqQW5egmO~KB7fB48a4eZsfBuj7SYwLLHNvJaByQ__'); /* Replace with your image URL */
+    background-size: cover; /* Ensure the image covers the entire container */
+    background-position: bottom center; /* Position the image to show the bottom */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    overflow: hidden; /* Hide any overflow */
+    background-color: rgba(0, 0, 0, 0.5);
+
+
+
+
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    justify-content: center; /* Center children vertically */
+    position: relative; /* Position context for absolute children */
+    bottom: 10px; /* Space below the text */
+    z-index: 2; /* Ensure it stays above the overlay */
+  }
+  .overlay-text {
+    color: white; /* Text color */
+    font-size: 60px; /* Font size */
+    font-weight: bold; /* Bold text */
+    text-align: center; /* Center the text */
+    position: absolute; /* Position it over the image */
+    bottom:250px; /* Position 20px from the bottom */
+    left: 50%; /* Center it horizontally */
+    transform: translateX(-50%); /* Adjust to center the text */
+    z-index: 2; /* Ensure it's above the image */
+    white-space: nowrap;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    transform: translateX(-50%);
+  }
+  .join-button {
+    background-color: #007bff; /* Background color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px 30px; /* Top-bottom and left-right padding */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transition for hover effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-top: 200px; /* Space above the button */
+  }
+  
+  .join-button:hover {
+    background-color: #007bff; /* Darker background on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+  }
+  
+  .join-button:active {
+    transform: translateY(0); /* Reset the lift effect when clicked */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Change shadow when active */
+  }
+
+
+
+
+
+  /* Responsive Styles */
+@media (max-width: 768px) {
+  .image-container {
+      height: 300px; /* Adjust height for smaller screens */
+  }
+
+  .overlay-text {
+      font-size: 20px; /* Smaller font size for overlay text */
+      padding: 0 10px; /* Reduce padding */
+  }
+
+  .join-button {
+      bottom: 10px; /* Adjust button position */
+      font-size: 14px; /* Smaller font size for the button */
+      padding: 8px 15px; /* Adjust button padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .overlay-text {
+      font-size: 18px; /* Smaller font size for very small screens */
+  }
+
+  .join-button {
+      font-size: 12px; /* Smaller font size for the button */
+      padding: 6px 10px; /* Adjust button padding */
+  }
+}
+
+/* Style for the container and boxes */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 20px; /* Space between the boxes */
+  margin: 30px;
+}
+
+.box {
+  padding: 20px;
+  /* background-color: lightgray; */
+  text-align: left;
+  /* border: 1px solid #ccc; */
+}
+
+.heading h2 {
+  font-size: 38px; /* Increased font size for heading */
+  text-align: left;
+  margin-bottom: 30px; /* Add space between heading and boxes */
+  margin: 20px;
+}
+
+h2 {
+  font-size: 19px; /* Increased font size for the box headings */
+  margin-bottom: 15px; /* Add space between heading and paragraph */
+}
+
+p {
+  font-size: 15px;
+  margin-bottom: 20px; /* More space between paragraph and button */
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff; /* Button color */
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #fff;
+}
+
+button:hover {
+  background-color: #007bff; /* Slight hover effect */
+}
+
+
+
+.heading1 {
+  text-align: center; /* Center the heading and paragraph */
+  margin-bottom: 20px; /* Space below the heading */
+}
+
+.heading1 h2 {
+  font-size: 32px; /* Increase font size if needed */
+}
+
+.heading1 p {
+  font-size: 16px; /* Set paragraph font size */
+}
+
+.content {
+  display: flex; /* Use flexbox for alignment */
+  align-items: stretch; /* Stretch items to match height */
+  margin: 20px; /* Space around the content */
+}
+
+.left {
+  width: 60%; /* Set the width of the text section */
+  padding-right: 20px; /* Space between text and image */
+}
+
+.right {
+  width: 40%; /* Set the width of the image section */
+}
+
+.right img {
+  width: 100%; /* Make the image responsive */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure the image covers the area */
+  border-radius: 10px; /* Optional: Add rounded corners */
+}
+
+.additional-text {
+  margin-top: 20px;
+  text-align: left; /* Space above additional text section */
+}
+
+.additional-text .left {
+  margin-bottom: 20px; /* Space below each additional text */
+}
+
+
+
+
+@media (max-width: 768px) { /* For screens smaller than or equal to 768px */
+  .content {
+      flex-direction: column; /* Stack elements vertically */
+  }
+
+  .right {
+      margin-bottom: 20px; /* Space below the image */
+  }
+
+  .left {
+      order: 1; /* Ensure the text is below the image */
+  }
+}
+
+section {
+  
+  text-align: center; /* Center align heading and paragraph */
+  margin: 20px; /* Add some margin around the section */
+}
+
+.cards-container {
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center the cards */
+  gap: 80px; /* Space between the cards */
+  flex-wrap: wrap; /* Allow cards to wrap to the next line if needed */
+}
+
+.card {
+  flex: 1; /* Allow cards to grow and take equal space */
+  max-width: 400px; /* Set a max-width for the cards */
+  background-color: #f9f9f9; /* Optional: card background color */
+  border: 1px solid #ccc; /* Optional: card border */
+  border-radius: 8px; /* Optional: rounded corners */
+  padding: 10px; /* Add padding inside the card */
+}
+
+.card img {
+  width: 100%; /* Make image responsive */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px 8px 0 0; /* Rounded corners for the top of the image */
+}
+
+
+
+@media (max-width: 768px) { /* For screens smaller than or equal to 768px */
+  .cards-container {
+      flex-direction: column; /* Stack cards vertically */
+      align-items: center; /* Center align cards */
+  }
+
+  .card {
+      width: 90%; /* Make cards take up most of the screen width */
+  }
+}
+
+
+
+section {
+  text-align: center; /* Center align all text in the section */
+  margin: 20px; /* Add margin around the section */
+}
+
+.intro {
+  margin-bottom: 30px; /* Space between intro text and sign-up form */
+}
+
+.sign {
+  display: inline-block; /* Center the box */
+  border: 2px solid #ccc; /* Border around the sign-up box */
+  border-radius: 8px; /* Rounded corners for the border */
+  padding: 20px; /* Padding inside the box */
+  background-color: #fff; /* White background color for the box */
+  width: 600px; /* Fixed width for the sign-up box */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+}
+
+.name-fields, .contact-fields {
+  display: flex; /* Flexbox for the fields */
+  justify-content: space-between; /* Space between the fields */
+  margin-bottom: 10px; /* Space below the flex container */
+  gap:20px
+}
+
+.name-fields input, .contact-fields input, .sign input {
+  width: calc(100% - 10px); /* Each input occupies half width */
+  padding: 10px; /* Padding inside the input fields */
+  border: 1px solid #ccc; /* Border for input fields */
+  border-radius: 4px; /* Rounded corners for input fields */
+  gap:20px
+}
+
+.sign input:last-child {
+  width: 100%; /* Full width for password input */
+}
+
+.sign button {
+  padding: 10px 15px; /* Padding for the button */
+  background-color: #007bff; /* Button background color */
+  border: none; /* No border for the button */
+  border-radius: 4px; /* Rounded corners for the button */
+  cursor: pointer; /* Cursor changes to pointer on hover */
+  width: 100%; /* Full width for the button */
+  margin-top: 10px; /* Space above the button */
+}
+
+
+.validation-messages {
+  color: red; /* Color for validation messages */
+  margin-top: 10px; /* Space above validation messages */
+}
+
+.sign button:hover {
+  background-color: #e0a800; /* Darker color on hover */
+}
+
+@media (max-width: 480px) {
+  .sign {
+      width: 90%; /* Responsive width for mobile */
+  }
+}
+
+
+
+
+footer {
+  background-color: rgba(0, 0, 0, 0.8); /* Light background color for the footer */
+  padding: 40px; /* Padding around the footer */
+  display: flex; /* Flexbox for layout */
+  justify-content: space-between; /* Space between left and right sides */
+  align-items: flex-start; /* Align items to the top */
+  color: white;
+  margin-top: 50px;
+  font-size: small;
+  gap:10px
+}
+
+.footer-container {
+  display: flex; /* Flexbox for the container */
+  justify-content: space-between; /* Space between items */
+  width: 100%; /* Full width */
+}
+
+.left.side {
+  display: flex; /* Flexbox for logo */
+  align-items: center; /* Center align items vertically */
+}
+
+.left.side img {
+  width: 50px; /* Adjust the size of the logo */
+  height: 50px; /* Adjust the size of the logo */
+  margin-right: 10px; /* Space between image and text */
+}
+
+.right.side {
+  display: flex; /* Flexbox for the right side */
+  align-items: flex-start; /* Align items to the start */
+}
+
+.mobile-app {
+  margin-right: 50px; /* Space between mobile app sections */
+}
+
+.buttons {
+  display: flex; /* Flexbox for buttons */
+  flex-direction: column; /* Stack buttons vertically */
+  gap: 20px; /* Space between buttons */
+  align-items: flex-start; /* Align items to the left */
+}
+
+button {
+  padding: 10px 30px; /* Padding for buttons */
+  background-color: #007bff; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none; /* No border for buttons */
+  border-radius: 4px; /* Rounded corners for buttons */
+  cursor: pointer; /* Cursor changes to pointer on hover */
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker color on hover */
+}
+
+
+.display-column {
+  text-align: center; /* Center align the text and links */
+}
+
+.footer-line {
+  margin: 20px 0; /* Add some margin to the line */
+}
+
+.social-links {
+  display: block; /* Change to block to stack links vertically */
+  margin-top: 10px; /* Space above the social links */
+}
+
+.social-links a {
+  display: block; /* Stack each link vertically */
+  margin: 5px 0; /* Space between links */
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Use inherited color for links */
+}
+
+
+@media (max-width: 768px) {
+  .right.side {
+      flex-direction: column; /* Stack elements on small screens */
+      align-items: flex-start; /* Align items to the start */
+  }
+
+  .buttons {
+      margin-top: 20px; /* Space above the buttons */
+  }
+}
+
+
+
